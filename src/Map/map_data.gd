@@ -9,11 +9,20 @@ const tile_types = {
 var width: int
 var height: int
 var tiles: Array[Tile]
+var entities: Array[Entity]
+
+@export var player1_definition: EntityDefinition
+@export var player2_definition: EntityDefinition
 
 func _init(map_width: int, map_height: int) -> void:
 	width = map_width
 	height = map_height
+	entities = []
 	_setup_tiles()
+	
+func _setup_entities() -> void:
+	entities.append({"position": Vector2i(1,1), "definition": player1_definition})
+	entities.append({"position": Vector2i(8,8), "definition": player2_definition})
 
 func _setup_tiles() -> void:
 	tiles = []
@@ -22,9 +31,13 @@ func _setup_tiles() -> void:
 			var tile_position := Vector2i(x, y)
 			var tile := Tile.new(tile_position, tile_types.floor)
 			tiles.append(tile)
-	for x in range (2, 4):
-		var tile: Tile = get_tile(Vector2i(x, 22))
-		tile.set_tile_type(tile_types.wall)
+	for x in range (0, width):
+		get_tile(Vector2i(x, 0)).set_tile_type(tile_types.wall)
+		get_tile(Vector2i(x, height - 1)).set_tile_type(tile_types.wall)
+	
+	for y in range (0, height):
+		get_tile(Vector2i(0, y)).set_tile_type(tile_types.wall)
+		get_tile(Vector2i(width -1, y)).set_tile_type(tile_types.wall)
 
 func get_tile(grid_position: Vector2i) -> Tile:
 	var tile_index: int = grid_to_index(grid_position)

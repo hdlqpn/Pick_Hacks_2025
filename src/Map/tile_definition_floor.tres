@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TileDefinition" load_steps=4 format=3 uid="uid://3wl4trs7t66f"]
+
+[ext_resource type="Script" path="res://src/Map/tile_definition.gd" id="1_dmdba"]
+[ext_resource type="Texture2D" uid="uid://cddd3874en1c4" path="res://grasstile (3)/grasstile/grass.png" id="2_upmcb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5io1"]
+atlas = ExtResource("2_upmcb")
+
+[resource]
+script = ExtResource("1_dmdba")
+texture = SubResource("AtlasTexture_j5io1")
+color = Color(1, 1, 1, 1)
+is_walkable = true

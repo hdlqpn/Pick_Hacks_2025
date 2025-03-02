@@ -1,0 +1,440 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnconk2r5kmsm"]
+
+[ext_resource type="Script" path="res://OneD_score.gd" id="1_r3ixc"]
+[ext_resource type="Texture2D" uid="uid://c1aisky4cncbn" path="res://oneD_tetris/background.png" id="2_05yjl"]
+[ext_resource type="Texture2D" uid="uid://mmo0swframcq" path="res://oneD_tetris/block.png" id="3_xkryb"]
+
+[sub_resource type="Animation" id="Animation_pi85a"]
+resource_name = "tetris_animation"
+length = 9.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tetris_blocks/1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.51003),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tetris_blocks/2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tetris_blocks/3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tetris_blocks/4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Tetris_blocks/5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tetris_blocks/6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tetris_blocks/7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Tetris_blocks/8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Tetris_blocks/9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Tetris_blocks/10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Tetris_blocks/11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5.5, 7.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Tetris_blocks/12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Tetris_blocks/13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 6.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Tetris_blocks/14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 7, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Tetris_blocks/15:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 7.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Tetris_blocks/16:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 8, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Tetris_blocks/17:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 8.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_g8h4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tetris_blocks/1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tetris_blocks/2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tetris_blocks/3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lko4"]
+_data = {
+"RESET": SubResource("Animation_g8h4t"),
+"tetris_animation": SubResource("Animation_pi85a")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_yw7jt"]
+font_size = 24
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_r3ixc")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+scale = Vector2(8.70833, 5.55556)
+texture = ExtResource("2_05yjl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tetris_blocks" type="Node2D" parent="."]
+position = Vector2(0, -132)
+
+[node name="1" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, -166)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="2" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, -129)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="3" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, -92)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="4" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, -55)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="5" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, -18)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="6" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 19)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="7" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 56)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="8" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 93)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="9" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 130)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="10" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 167)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="11" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 204)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="12" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 241)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="13" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 278)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="14" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 315)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="15" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 352)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="16" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 389)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="17" type="Sprite2D" parent="Tetris_blocks"]
+visible = false
+position = Vector2(0, 426)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0lko4")
+}
+autoplay = "tetris_animation"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 296.0
+offset_top = -264.0
+offset_right = 336.0
+offset_bottom = -241.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_yw7jt")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 314.0
+offset_top = 57.0
+offset_right = 408.0
+offset_bottom = 91.0
+text = "Next"
+label_settings = SubResource("LabelSettings_yw7jt")
+
+[node name="Block2" type="Sprite2D" parent="."]
+position = Vector2(25, 3)
+scale = Vector2(0.049, 4.44)
+texture = ExtResource("3_xkryb")
+
+[node name="Block3" type="Sprite2D" parent="."]
+position = Vector2(-25, 3)
+scale = Vector2(0.049, 4.44)
+texture = ExtResource("3_xkryb")
+
+[node name="Block4" type="Sprite2D" parent="."]
+position = Vector2(-3.01981e-13, 319)
+rotation = 1.5708
+scale = Vector2(0.0494696, 0.39)
+texture = ExtResource("3_xkryb")
+
+[node name="up_next" type="Node2D" parent="."]
+position = Vector2(344, 159)
+scale = Vector2(0.594572, 0.594572)
+
+[node name="18" type="Sprite2D" parent="up_next"]
+position = Vector2(1.68188, -55.5021)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="19" type="Sprite2D" parent="up_next"]
+position = Vector2(1.68188, -18.5007)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="20" type="Sprite2D" parent="up_next"]
+position = Vector2(1.68188, 18.5007)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")
+
+[node name="21" type="Sprite2D" parent="up_next"]
+position = Vector2(1.68188, 55.5021)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_xkryb")

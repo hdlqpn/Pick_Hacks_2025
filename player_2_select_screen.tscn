@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwfvxfgqak7ib"]
+[gd_scene load_steps=13 format=3 uid="uid://bwfvxfgqak7ib"]
 
 [ext_resource type="Script" path="res://player_2_select_screen.gd" id="1_v2nh5"]
 [ext_resource type="PackedScene" uid="uid://c38h8wrolu4je" path="res://mage_slot.tscn" id="2_w2m1o"]
 [ext_resource type="Texture2D" uid="uid://r1wgk5bdpx1n" path="res://Mages/Aggressive/aggro_slot.png" id="3_1j0uo"]
 [ext_resource type="Texture2D" uid="uid://k7acr3x7hcdu" path="res://Mages/Aggressive/agg_chosen_slot.png" id="4_bebn7"]
+[ext_resource type="FontFile" uid="uid://dte31qgfuho16" path="res://Grenze/Grenze-Black.ttf" id="5_kgww1"]
 [ext_resource type="Texture2D" uid="uid://cd0sjnyq0o3bn" path="res://Mages/Defensive/def_slot.png" id="5_wp1x8"]
 [ext_resource type="Texture2D" uid="uid://bg5fs0ral420w" path="res://Mages/Defensive/test_panel.png" id="6_ayjth"]
 [ext_resource type="Texture2D" uid="uid://cvbloyik2wvg8" path="res://Mages/Sustaining/sus_slot.png" id="7_l8q42"]
@@ -47,16 +48,17 @@ offset_right = 469.0
 offset_bottom = 625.0
 theme = SubResource("Theme_laig7")
 text = "Aggressive Mage
+10 health/10 mana/3 movement
 
 Spells
 
-1. Punch:
+1. Punch: 0 cost damage spell that hits one target in front.
 
-2. Fire Punch
+2. Fire Punch: 2 cost fire punch that spans 3 tiles in front for 4 damage.
 
-3. Thunderous Dash
+3. Thunderous Dash: 3 cost buff that gives 2 extra movement.
 
-4. Furious Explosion"
+4. Furious Explosion: 2 cost 3x3 explosion around the caster that deals 3 damage to anyone in the vicinity."
 
 [node name="Panel" type="Panel" parent="VBoxContainer2/Mage_Slot"]
 z_index = -1
@@ -71,7 +73,9 @@ offset_left = 232.0
 offset_top = 213.0
 offset_right = 319.0
 offset_bottom = 236.0
-scale = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_kgww1")
+theme_override_font_sizes/font_size = 150
 text = "P2 is Ready"
 
 [node name="Mage_Slot2" parent="VBoxContainer2" instance=ExtResource("2_w2m1o")]
@@ -96,17 +100,18 @@ offset_left = 169.0
 offset_top = -135.0
 offset_right = 469.0
 offset_bottom = 485.0
-text = "Defensive Cleric:
+text = "Defensive Cleric 
+10 health/10 mana/3 movement
 
 Spells
 
-1. Punch
+1. Punch: 0 cost damage spell that hits one target in front.
 
-2. Rock Lob
+2. Rock Lob: 2 radius rock throw that deals 3 damage and costs 1 mana.
 
-3. Shield
+3. Shield: A 3 cost buff that protects the caster until the end of their next turn.
 
-4. Force Push"
+4. Force Push: A 2 cost push of force that pushes opponents back 1 space for 2 damage. If the opponent is pushed into a wall, it deals 5 damage."
 
 [node name="Label2" type="Label" parent="VBoxContainer2/Mage_Slot2"]
 layout_mode = 0
@@ -114,7 +119,9 @@ offset_left = 230.0
 offset_top = 69.0
 offset_right = 317.0
 offset_bottom = 92.0
-scale = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_kgww1")
+theme_override_font_sizes/font_size = 150
 text = "P2 is Ready"
 
 [node name="Panel" type="Panel" parent="VBoxContainer2/Mage_Slot2"]
@@ -146,16 +153,17 @@ offset_top = -275.0
 offset_right = 469.0
 offset_bottom = 345.0
 text = "Sustaining Wizard:
+10 health/10 mana/3 movement
 
 Spells
 
-1. Punch:
+1. Punch: 0 cost damage spell that hits one target in front.
 
-2. Shining Bubble
+2. Shining Bubble: A 3 damage projectile that spawns right in front of the caster for 1 mana. Continues to move forward a tile each of the casters turns.
 
-3. Liquid Teleport
+3. Liquid Teleport: A 3-tile radius teleport that costs 3 mana.
 
-4. Watery Transmutation"
+4. Watery Transmutation: A 3 cost change spell that randomly changes an item in front of the caster into another."
 
 [node name="Label3" type="Label" parent="VBoxContainer2/Mage_Slot3"]
 layout_mode = 0
@@ -163,7 +171,9 @@ offset_left = 232.0
 offset_top = -71.0
 offset_right = 319.0
 offset_bottom = -48.0
-scale = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_kgww1")
+theme_override_font_sizes/font_size = 150
 text = "P2 is Ready"
 
 [node name="Panel" type="Panel" parent="VBoxContainer2/Mage_Slot3"]
@@ -194,16 +204,19 @@ offset_top = -415.0
 offset_right = 469.0
 offset_bottom = 205.0
 text = "Strategic Mage:
+10 health/10 mana/3 movement
 
 Spells
 
-1. Punch
+1. Punch: 0 cost damage spell that hits one target in front.
 
-2. Explosion Rune
+2. Explosion Rune: A 1 cost spell that has the caster place an explosive rune down in front of them. It deals 4 damage when one walks over it.
 
-3. Teleport Rune
+3. Teleport Rune: A 2 cost spell that has the caster place a teleport rune in front of them. When they cast the spell again, they teleport back to where they placed it down.
 
-4. Hypnotic Command"
+ I wonder what would happen if someone was on it while you used it...
+
+4. Hypnotic Command: A 3 cost spell that targets an opponent with a 5 tile radius. If they are hit, they are pushed in any direction."
 
 [node name="Label4" type="Label" parent="VBoxContainer2/Mage_Slot4"]
 layout_mode = 0
@@ -211,7 +224,9 @@ offset_left = 232.0
 offset_top = -209.0
 offset_right = 319.0
 offset_bottom = -186.0
-scale = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_kgww1")
+theme_override_font_sizes/font_size = 150
 text = "P2 is Ready"
 
 [node name="Panel" type="Panel" parent="VBoxContainer2/Mage_Slot4"]

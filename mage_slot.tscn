@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c38h8wrolu4je"]
+
+[ext_resource type="Script" path="res://mage_slot.gd" id="1_b2nn0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t3wk8"]
+
+[node name="Mage_Slot" type="Panel"]
+script = ExtResource("1_b2nn0")
+characterTexture = SubResource("CompressedTexture2D_t3wk8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 594.0
+offset_bottom = 559.0
+scale = Vector2(0.25, 0.25)

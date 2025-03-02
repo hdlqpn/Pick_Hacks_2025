@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://di4bvd5nrbeat"]
+
+[ext_resource type="Script" path="res://selection_screen.gd" id="1_hja2d"]
+[ext_resource type="PackedScene" uid="uid://c38h8wrolu4je" path="res://agg_mage_slot.tscn" id="1_qmink"]
+[ext_resource type="Texture2D" uid="uid://c81xl66hxuav6" path="res://sprite_defense_but_bigger/sprite_defense_but_bigger/biggerbigwizard-export.png" id="2_35qpa"]
+[ext_resource type="Texture2D" uid="uid://dp8wyyc2vf5h7" path="res://Agressive_Wizard_Sprites/Agressive_Wizard_Sprites/agress_front-export.png" id="3_xk02y"]
+[ext_resource type="Texture2D" uid="uid://dnv0p18hfue71" path="res://sustaining_mage/sustaining_mage/Susmage-down-export.png" id="5_tj2ck"]
+[ext_resource type="Texture2D" uid="uid://5cdd7dff8c1j" path="res://Statistician_Wizard_Sprites_Updated/Statistician_Wizard_Sprites_Updated/Statistician_Wizard_Front_View.png" id="6_45ri2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s5t5n"]
+
+[node name="Player_1_Select_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hja2d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 168.0
+texture = SubResource("PlaceholderTexture2D_s5t5n")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 740.0
+offset_bottom = 543.0
+
+[node name="Mage_Slot" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterTexture = ExtResource("3_xk02y")
+
+[node name="Mage_Slot2" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterTexture = ExtResource("2_35qpa")
+
+[node name="Mage_Slot3" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterTexture = ExtResource("5_tj2ck")
+
+[node name="Mage_Slot4" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterTexture = ExtResource("6_45ri2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1498.0
+offset_right = 2238.0
+offset_bottom = 631.0

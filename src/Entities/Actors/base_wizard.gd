@@ -3,13 +3,20 @@ extends Entity
 
 const MAX_HEALTH: int = 10
 const MAX_MANA: int = 10
+const MAX_MOVE: int = 3
+const MAX_ACTIONS: int = 1
 
 var current_health: int
 var current_mana: int
+var current_move: int
+var current_actions: int
 var is_alive: bool = true
 
 @export var health_bar_scene: PackedScene
 var health_bar: HealthBar
+
+@export var mana_bar_scene: PackedScene
+var mana_bar: ManaBar
 
 func _init(start_position: Vector2i, entity_definition: EntityDefinition) -> void:
 	centered = false
@@ -18,21 +25,13 @@ func _init(start_position: Vector2i, entity_definition: EntityDefinition) -> voi
 	texture_up = entity_definition.up_texture
 	texture_left = entity_definition.left_texture
 	texture_right = entity_definition.right_texture
-	hp_texture0 = entity_definition.hp_texture0
-	hp_texture1 = entity_definition.hp_texture1
-	hp_texture2 = entity_definition.hp_texture2
-	hp_texture3 = entity_definition.hp_texture3
-	hp_texture4 = entity_definition.hp_texture4
-	hp_texture5 = entity_definition.hp_texture5
-	hp_texture6 = entity_definition.hp_texture6
-	hp_texture7 = entity_definition.hp_texture7
-	hp_texture8 = entity_definition.hp_texture8
-	hp_texture9 = entity_definition.hp_texture9
-	hp_texture10 = entity_definition.hp_texture10
 	texture = texture_down
 	modulate = entity_definition.color
 	direction = Direction.DOWN
 	current_health = MAX_HEALTH
+	current_mana = MAX_MANA
+	current_move = MAX_MOVE
+	current_actions = MAX_ACTIONS
 
 func _ready() -> void:
 	if health_bar_scene:
@@ -40,6 +39,11 @@ func _ready() -> void:
 		add_child(health_bar)
 		health_bar.set_health(current_health, MAX_HEALTH)
 		print("Healthbar Added to scene: ", health_bar)
+	
+	if mana_bar_scene:
+		mana_bar = mana_bar_scene.instantiate()
+		add_child(mana_bar)
+		mana_bar.set_mana(current_mana, MAX_MANA)
 
 func add_health(value: int) -> void:
 	var temp = current_health + value
@@ -64,7 +68,7 @@ func add_mana(value: int) -> void:
 	if temp > MAX_MANA:
 		temp = MAX_MANA
 	current_mana = temp
-#	update_health_bar()
+	update_mana_bar()
 
 
 func sub_mana(value: int) -> void:
@@ -72,11 +76,39 @@ func sub_mana(value: int) -> void:
 	if temp <= 0:
 		temp = 0
 	current_mana = temp
-#	update_health_bar()
+	update_mana_bar()
+
+func add_move(value: int) -> void:
+	var temp = current_move + value
+	if temp > MAX_MOVE:
+		temp = MAX_MOVE
+	current_move = temp
+
+func sub_move(value: int) -> void:
+	var temp = current_move - value
+	if temp <= 0:
+		temp = 0
+	current_move = temp
+
+func add_actions(value: int) -> void:
+	var temp = current_actions + value
+	if temp > MAX_ACTIONS:
+		temp = MAX_ACTIONS
+	current_actions = temp
+
+func sub_actions(value: int) -> void:
+	var temp = current_actions - value
+	if temp <= 0:
+		temp = 0
+	current_actions = temp
 
 func update_health_bar() -> void:
 	if health_bar:
 		health_bar.set_health(current_health, MAX_HEALTH)
+
+func update_mana_bar() -> void:
+	if mana_bar:
+		mana_bar.set_mana(current_mana, MAX_MANA)
 
 func action_1(opponent: BaseWizard) -> void:
 	#offset is the current player's position

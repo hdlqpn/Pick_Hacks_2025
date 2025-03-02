@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 	if get_parent():
 		var wizard_position = get_parent().global_position
 		var health_bar_width = sprite.texture.get_width()
-		global_position = wizard_position + Vector2(+health_bar_width / 2, +30)
+		global_position = wizard_position + Vector2(+health_bar_width / 2, +20)

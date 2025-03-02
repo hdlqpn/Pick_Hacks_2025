@@ -6,7 +6,7 @@ var offset: Vector3i
 func _init(dx: int, dy: int, dz: int) -> void:
 	offset = Vector3i(dx, dy, dz)
 
-func perform(game: Game, entity: Entity) -> void:
+func perform(game: Game, entity: Entity, enemy_pos: Vector2i = Vector2i(-1, -1)) -> void:
 	var two_offset: Vector2i = Vector2i(offset.x, offset.y)
 	var destination: Vector2i = entity.grid_position + two_offset
 	
@@ -27,7 +27,11 @@ func perform(game: Game, entity: Entity) -> void:
 		entity.texture = entity.texture_left
 		entity.direction = entity.Direction.LEFT
 	
+	print("Dest: ", destination)
+	print("Enemy: ", enemy_pos)
 	
+	if destination == enemy_pos:
+		return
 	
 	if not destination_tile or not destination_tile.is_walkable():
 		return

@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="EntityDefinition" load_steps=32 format=3 uid="uid://41b5lv32ypwf"]
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=28 format=3 uid="uid://41b5lv32ypwf"]
 
-[ext_resource type="Texture2D" uid="uid://dxeakix3k31uo" path="res://144_size_character_sprites/Def_Front_144.png" id="1_1njx5"]
 [ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_11xq5"]
 [ext_resource type="Texture2D" uid="uid://65ghj6x512fd" path="res://144_size_character_sprites/Healthbar1_144.png" id="2_7m0sc"]
 [ext_resource type="Texture2D" uid="uid://lvp5wxlqf0vn" path="res://144_size_character_sprites/Healthbar0_144.png" id="2_ctuut"]
@@ -13,12 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ckw5d2uys0l5t" path="res://144_size_character_sprites/Healthbar7_144.png" id="9_g2jlh"]
 [ext_resource type="Texture2D" uid="uid://busm3bca4lv1b" path="res://144_size_character_sprites/Healthbar8_144.png" id="10_rbav8"]
 [ext_resource type="Texture2D" uid="uid://bcy5qsf7f3iqw" path="res://144_size_character_sprites/Healthbar9_144.png" id="11_730cn"]
-[ext_resource type="Texture2D" uid="uid://bmh33edctodee" path="res://144_size_character_sprites/Def_Left_144.png" id="13_wupau"]
-[ext_resource type="Texture2D" uid="uid://dnrladoggd2e2" path="res://144_size_character_sprites/Def_Right_144.png" id="14_k73ec"]
-[ext_resource type="Texture2D" uid="uid://cpg6e8juwhtjt" path="res://144_size_character_sprites/Def_Back_144.png" id="16_i3re1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_joq62"]
-atlas = ExtResource("1_1njx5")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gh0h8"]
 atlas = ExtResource("2_ctuut")
@@ -54,13 +49,10 @@ atlas = ExtResource("10_rbav8")
 atlas = ExtResource("11_730cn")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wd5ef"]
-atlas = ExtResource("13_wupau")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksj00"]
-atlas = ExtResource("14_k73ec")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lskfk"]
-atlas = ExtResource("16_i3re1")
 
 [resource]
 script = ExtResource("1_11xq5")

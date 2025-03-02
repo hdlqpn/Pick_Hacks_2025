@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobpvcxnhxoxx"]
+
+[ext_resource type="PackedScene" uid="uid://di4bvd5nrbeat" path="res://player_1_select_screen.tscn" id="1_ufafr"]
+[ext_resource type="PackedScene" uid="uid://bwfvxfgqak7ib" path="res://player_2_select_screen.tscn" id="2_7ywyc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player_1_Select_Screen" parent="." instance=ExtResource("1_ufafr")]
+
+[node name="Player_2_Select_Screen2" parent="." instance=ExtResource("2_7ywyc")]
+offset_left = 648.0
+offset_top = -2.0
+offset_right = 648.0
+offset_bottom = -2.0

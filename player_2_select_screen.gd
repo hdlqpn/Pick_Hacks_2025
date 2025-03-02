@@ -51,13 +51,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame
 func _process(delta):
 	# Handle player input for navigation
-	if Input.is_action_just_pressed("up_ui_p1") and not input_disabled:  # 'W' key
+	if Input.is_action_just_pressed("up_ui_p2") and not input_disabled:  # 'W' key
 		move_up()
-	elif Input.is_action_just_pressed("down_ui_p1") and not input_disabled:  # 'S' key
+	elif Input.is_action_just_pressed("down_ui_p2") and not input_disabled:  # 'S' key
 		move_down()
 
 	# Check for the 'Enter' key press to select the panel
-	if Input.is_action_just_pressed("ui_accept_p1"):  # Enter key
+	if Input.is_action_just_pressed("ui_accept_p2"):  # Enter key
 		# Start the fade-out effect on the current TextBox
 		print("Input Disabled", input_disabled)
 		if input_disabled == false:

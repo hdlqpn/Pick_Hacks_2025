@@ -1,7 +1,7 @@
 class_name Game
 extends Node2D
 
-const GAME_OVER: PackedScene = preload("res://src/Utils/game_over.tscn")
+const GAME_OVER: PackedScene = preload("res://Start_Screen.tscn")
 
 const player_definition: EntityDefinition = preload("res://src/Entities/Actors/Actions/entity_definition_player.tres")
 const player2_definition: EntityDefinition = preload("res://src/Entities/Actors/Actions/entity_definition_player2.tres")
@@ -21,16 +21,37 @@ var p1_color: Color
 var p2_color: Color
 var inactive: Color = Color.GRAY
 
+enum Wizards{AGGRO = 1, DEF = 2, STAT = 4, SUS = 3}
+
+var player1_wizard: Wizards
+var player2_wizard: Wizards
 
 func _ready() -> void:
 	var player_start_pos: Vector2i = Grid.world_to_grid(get_viewport_rect().size.floor() / 2)
-	player = DefWizard.new(player_start_pos, player_definition)
+	if player1_wizard == Wizards.AGGRO:
+		player = AggroWizard.new(player_start_pos, player_definition)
+	elif player1_wizard == Wizards.DEF:
+		player = DefWizard.new(player_start_pos, player_definition)
+	elif player1_wizard == Wizards.STAT:
+		player = StatWizard.new(player_start_pos, player_definition)
+	else:
+		player = SusWizard.new(player_start_pos, player_definition)
+		
+	
+		
 	p1_color = player.modulate
 	player.health_bar_scene = health_bar_scene
 	player.mana_bar_scene = mana_bar_scene
 	entities.add_child(player)
 	
-	player2 = DefWizard.new(Vector2i(8,8), player2_definition)
+	if player2_wizard == Wizards.AGGRO:
+		player2 = AggroWizard.new(Vector2i(7,7), player2_definition)
+	elif player2_wizard == Wizards.DEF:
+		player2 = DefWizard.new(Vector2i(7,7), player2_definition)
+	elif player2_wizard == Wizards.STAT:
+		player2 = StatWizard.new(Vector2i(7,7), player2_definition)
+	else:
+		player2 = SusWizard.new(Vector2i(7,7), player2_definition)
 	p2_color = player2.modulate
 	player2.modulate = inactive
 	player2.health_bar_scene = health_bar_scene

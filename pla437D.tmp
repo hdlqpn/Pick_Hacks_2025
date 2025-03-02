@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://di4bvd5nrbeat"]
+
+[ext_resource type="Script" path="res://selection_screen.gd" id="1_hja2d"]
+[ext_resource type="PackedScene" uid="uid://c38h8wrolu4je" path="res://mage_slot.tscn" id="1_qmink"]
+[ext_resource type="Texture2D" uid="uid://r1wgk5bdpx1n" path="res://Mages/Aggressive/aggro_slot.png" id="3_08oam"]
+[ext_resource type="Texture2D" uid="uid://cd0sjnyq0o3bn" path="res://Mages/Defensive/def_slot.png" id="4_rg0il"]
+[ext_resource type="Texture2D" uid="uid://cvbloyik2wvg8" path="res://Mages/Sustaining/sus_slot.png" id="5_kjdho"]
+[ext_resource type="Texture2D" uid="uid://cocld6n62gvaj" path="res://Mages/Strategic/strat_slot.png" id="6_lojur"]
+
+[node name="Player_1_Select_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hja2d")
+
+[node name="VBoxContainer2" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_right = 1241.0
+offset_bottom = 1742.0
+theme_override_constants/v_separation = 140
+
+[node name="Mage_Slot" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterPath = "res://Mages/Aggressive/aggro_mage.tscn"
+characterTexture = ExtResource("3_08oam")
+
+[node name="Mage_Slot2" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterPath = "res://Mages/Defensive/def_mage.tscn"
+characterTexture = ExtResource("4_rg0il")
+
+[node name="Mage_Slot3" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterPath = "res://Mages/Sustaining/sus_mage.tscn"
+characterTexture = ExtResource("5_kjdho")
+
+[node name="Mage_Slot4" parent="VBoxContainer2" instance=ExtResource("1_qmink")]
+layout_mode = 2
+characterPath = "res://Mages/Strategic/strat_mage.tscn"
+characterTexture = ExtResource("6_lojur")

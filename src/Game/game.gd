@@ -4,6 +4,8 @@ extends Node2D
 const player_definition: EntityDefinition = preload("res://src/Entities/Actors/Actions/entity_definition_player.tres")
 const player2_definition: EntityDefinition = preload("res://src/Entities/Actors/Actions/entity_definition_player2.tres")
 
+var health_bar_scene: PackedScene = preload("res://src/Utils/healthbar.tscn")
+
 @onready var player: BaseWizard
 @onready var player2: BaseWizard
 @onready var event_handler: EventHandler = $EventHandler
@@ -28,10 +30,13 @@ func _ready() -> void:
 	var player_start_pos: Vector2i = Grid.world_to_grid(get_viewport_rect().size.floor() / 2)
 	player = BaseWizard.new(player_start_pos, player_definition)
 	p1_color = player.modulate
+	player.health_bar_scene = health_bar_scene
 	entities.add_child(player)
+	
 	player2 = BaseWizard.new(Vector2i(8,8), player2_definition)
 	p2_color = player2.modulate
 	player2.modulate = inactive
+	player2.health_bar_scene = health_bar_scene
 	entities.add_child(player2)
 	setup_camera()
 	
@@ -59,7 +64,12 @@ func _process(delta: float) -> void:
 			if action.offset.z == 1:
 				print("We are trying to perform action 1")
 				player.action_1(player2)
-				
+			elif action.offset.z == 2:
+				player.action_2(player2)
+			elif action.offset.z == 3:
+				player.action_3(player2)
+			elif action.offset.z == 4:
+				player.action_4(player2)
 			p1_act = p1_act - 1
 	elif turn == 2:
 		if (action2.offset.x != 0 || action2.offset.y != 0) && p2_move > 0:
@@ -67,6 +77,14 @@ func _process(delta: float) -> void:
 			p2_move = p2_move - 1
 		elif action2.offset.z != 0 && p2_act > 0:
 			action2.perform(self, player2)
+			if action2.offset.z == 1:
+				player2.action_1(player)
+			elif action2.offset.z == 2:
+				player2.action_2(player)
+			elif action2.offset.z == 3:
+				player2.action_3(player)
+			elif action2.offset.z == 4:
+				player2.action_4(player)
 			p2_act = p2_act - 1
 			print("Player 2 Act: ", p2_act)
 	if p1_move == 0 && p1_act == 0:

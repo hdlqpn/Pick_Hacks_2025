@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="TileDefinition" load_steps=4 format=3 uid="uid://3wl4trs7t66f"]
 
 [ext_resource type="Script" path="res://src/Map/tile_definition.gd" id="1_dmdba"]
-[ext_resource type="Texture2D" uid="uid://drt43mgax2tym" path="res://gray_tile.png" id="2_n8oqn"]
+[ext_resource type="Texture2D" uid="uid://ddjgs03yf3chx" path="res://144_size_character_sprites/grass_144.png" id="2_oud1r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5io1"]
-atlas = ExtResource("2_n8oqn")
+atlas = ExtResource("2_oud1r")
 
 [resource]
 script = ExtResource("1_dmdba")

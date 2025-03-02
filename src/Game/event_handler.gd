@@ -1,8 +1,8 @@
 class_name EventHandler
 extends Node
 
-func get_action(turn: int) -> Action:
-	var action: Action = null
+func get_action(turn: int) -> MovementAction:
+	var action: MovementAction = MovementAction.new(0, 0)
 	if turn == 1:
 		#if Input.is_action_just_pressed("ui_up"):
 		#	action = MovementAction.new(0, -1)
@@ -45,8 +45,9 @@ func get_action(turn: int) -> Action:
 			if Input.is_action_just_pressed("jp_action_%d" % i):
 			#	jp_action = i
 				break  # Stops checking once an action is detected
-		if Input.is_action_just_pressed("ui_cancel"):
-			action = EscapeAction.new()
+		# HEY LOOK AT ME I GOT RID OF THIS WHILE TRYING TO FIX THE MOVEMENT
+		#if Input.is_action_just_pressed("ui_cancel"):
+			#action = EscapeAction.new()
 		
 	# Player 1 (Keyboard)
 	#var kb_hor = int(Input.is_action_pressed("kb_move_right")) - int(Input.is_action_pressed("kb_move_left"))

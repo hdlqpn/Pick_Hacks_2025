@@ -11,6 +11,11 @@ const player2_definition: EntityDefinition = preload("res://src/Entities/Actors/
 @onready var camera: Camera = $Camera2D
 @onready var entities: Node2D = $Entities
 
+var turn: int = 1
+var p1_move: int = 4
+var p2_move: int = 4
+
+
 func _ready() -> void:
 	var player_start_pos: Vector2i = Grid.world_to_grid(get_viewport_rect().size.floor() / 2)
 	player = Entity.new(player_start_pos, player_definition)
@@ -22,15 +27,37 @@ func _ready() -> void:
 func get_map_data() -> MapData:
 	return map.map_data
 
-func _physics_process(delta: float) -> void:
-	var turn: int = 1
-	var turn2: int = 2
+func _process(delta: float) -> void:
+	#var turn: int = 0
+	var alive: bool = true
 	
-	var action: Action = event_handler.get_action(turn)
-	var action2: Action = event_handler.get_action(turn2)
-	if action || action2:
-		action.perform(self, player)
-		action2.perform(self, player2)
+	var action: MovementAction = event_handler.get_action(1)
+	var action2: MovementAction = event_handler.get_action(2)
+	#if action || action2:
+		#action.perform(self, player)
+		#action2.perform(self, player2)
+		
+	
+	if turn == 1:
+		if action.offset != Vector2i(0,0):
+			action.perform(self, player)
+			p1_move = p1_move - 1
+			#print("Player 1")
+	elif turn == 2:
+		if action2.offset != Vector2i(0,0):
+			action2.perform(self, player2)
+			p2_move = p2_move - 1
+			#print("Player 2")
+	if p1_move == 0:
+		print("I am trying to return it back to player 2")
+		turn = 2
+		p2_move = 4
+		p1_move = -1
+	if p2_move == 0:
+		print("Hey I am trying to return it back to player 1")
+		turn = 1
+		p1_move = 4
+		p2_move = -1
 
 func setup_camera() -> void:
 	var tile_size: int = 144

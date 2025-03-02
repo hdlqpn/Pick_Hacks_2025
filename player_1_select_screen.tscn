@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cy6susvyp0hav"]
 
 [ext_resource type="Script" path="res://selection_screen.gd" id="1_hja2d"]
-[ext_resource type="PackedScene" path="res://mage_slot.tscn" id="1_qmink"]
+[ext_resource type="PackedScene" uid="uid://c38h8wrolu4je" path="res://mage_slot.tscn" id="1_qmink"]
 [ext_resource type="Texture2D" uid="uid://r1wgk5bdpx1n" path="res://Mages/Aggressive/aggro_slot.png" id="3_08oam"]
 [ext_resource type="Texture2D" uid="uid://cd0sjnyq0o3bn" path="res://Mages/Defensive/def_slot.png" id="4_rg0il"]
 [ext_resource type="Texture2D" uid="uid://k7acr3x7hcdu" path="res://Mages/Aggressive/agg_chosen_slot.png" id="4_t2cnt"]

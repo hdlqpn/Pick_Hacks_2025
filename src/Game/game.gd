@@ -68,10 +68,14 @@ func _process(delta: float) -> void:
 	
 	if player.is_alive == false:
 		print("Player 2 Wins!")
-		get_tree().change_scene_to_packed(GAME_OVER)
+		
+		get_tree().change_scene_to_file("res://Start_Screen.tscn")
+		return
 	elif player2.is_alive == false:
 		print("Player 1 Wins!")
-		get_tree().change_scene_to_packed(GAME_OVER)
+		get_tree().change_scene_to_file("res://Start_Screen.tscn")
+		return
+
 	
 	if turn == 1:
 		if (action.offset.x != 0 || action.offset.y != 0) && player.current_move > 0:

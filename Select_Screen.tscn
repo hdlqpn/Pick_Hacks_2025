@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://manager.gd" id="1_7qm4o"]
 [ext_resource type="PackedScene" uid="uid://cy6susvyp0hav" path="res://player_1_select_screen.tscn" id="1_ufafr"]
-[ext_resource type="PackedScene" path="res://player_2_select_screen.tscn" id="2_7ywyc"]
+[ext_resource type="PackedScene" uid="uid://bwfvxfgqak7ib" path="res://player_2_select_screen.tscn" id="2_7ywyc"]
 [ext_resource type="Texture2D" uid="uid://cdux2s8fqybor" path="res://beeg_stone_tower.png" id="3_qy30n"]
 
 [node name="Control" type="Control"]
